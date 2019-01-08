@@ -1,0 +1,180 @@
+sudo rm /var/lib/apt/lists/lock
+sudo rm /var/cache/apt/archives/lock
+sudo rm /var/lib/dpkg/lock
+
+
+      ___           ___           ___                                             ___    
+     /__/|         /  /\         /__/\        ___           ___       ___        /  /\   
+    |  |:|        /  /:/_        \  \:\      /  /\         /  /\     /  /\      /  /:/   
+    |  |:|       /  /:/ /\        \__\:\    /  /:/        /  /:/    /  /:/     /__/::\   
+  __|  |:|      /  /:/ /::\   ___ /  /::\  /__/::\       /  /:/    /__/::\     \__\/\:\  
+ /__/\_|:|____ /__/:/ /:/\:\ /__/\  /:/\:\ \__\/\:\__   /  /::\    \__\/\:\__     \  \:\ 
+ \  \:\/:::::/ \  \:\/:/~/:/ \  \:\/:/__\/    \  \:\/\ /__/:/\:\      \  \:\/\     \__\:\
+  \  \::/~~~~   \  \::/ /:/   \  \::/          \__\::/ \__\/  \:\      \__\::/     /  /:/
+   \  \:\        \__\/ /:/     \  \:\          /__/:/       \  \:\     /__/:/     /__/:/ 
+    \  \:\         /__/:/       \  \:\         \__\/         \__\/     \__\/      \__\/  
+     \__\/         \__\/         \__\/                                                
+
+
+##########################################################
+##########################################################
+
+
+/* show disk usage and sort them, 
+ * showing the largest files eating up disk space
+ */
+ 
+du -sh * | sort -n | tail
+ 
+/* Graphically display number of connections for each hosts. */
+
+
+netstat -an | grep ESTABLISHED | awk '{print $5}' | awk -F: '{print $1}' | sort | uniq -c | awk '{ printf("%s\t%s\t",$2,$1) ; for (i = 0; i < $1; i++) {printf("*")}; print "" }'
+
+* Download huge tar tarball 
+ * remotely without local saving.
+ */
+wget -qO - "http://www.domain.com/tarfile.gz" | tar zxvf -
+
+/* Display application currently
+ * connected to the internet  
+ */
+lsof -P -i -n | cut -f 1 -d " "| uniq | tail -n +2
+
+* Logout without saving history */
+kill -9 $$
+ 
+/* Top 10 running process */
+ps aux | sort -nk +4 | tail
+
+#######################################################
+########################################################
+
+
+
+Navigation: 
+    pwd, ls path, cd folder_path. Definition of path (computing)
+Help: 
+    man command, command --help, command -h, Explainshell
+Manipulation: 
+    cp, mv, rm, mkdir, ln
+Permissions: 
+    chmod, chown, chgrp, su, sudo (enable sudo on Debian).
+Display a line of text: 
+    echo, echo $PATH (show the content of variable $PATH).
+Text editor: nano,gedit
+
+Visualization: cat, more, less, head, tail.
+
+Redirect standard output to a file: 
+    command > file
+Execute multiple commands (AND): 
+        command1 && command2 && commandN.
+Execute a command in the background: 
+        command &.
+Run an executable in the current directory that is not in your $PATH: 
+                        ./executable
+Run a Bash script: 
+            bash script.sh
+     Executable with header 
+                    #!/bin/bash
+                    
+                    
+             _        !!!!!!!!!!!!!!                                           _     
+                    APT COmmands haru
+      | |           !!!!!!!!!!!!!!!!!!!!                                                   
+      |_|                                                              
+      
+                        dpkg -i hell.deb
+                        
+                        sudo apt-get install ./package.deb.
+
+                    sudo apt-get install package.
+Uninstall a package from the repository:
+                     sudo apt-get purge package.
+                    sudo apt-get autoremove.
+!!!!
+                    sudo apt-get upgrade.
+
+                    BASH SHORTCUTS
+
+Go to previous command: ↑, or Ctrl + P.
+Go to next command: ↓, or Ctrl + N.
+Search through previously used commands: Ctrl + R.
+Terminate the current process (SIGINT): Ctrl + C.
+Suspend the current process (SIGTSTP): Ctrl + Z.
+
+
+
+Show and/or admin current processes: 
+                jobs, ps, top
+                        
+ xkill- sidhai dead
+ 
+ 
+ 
+ Print newline, word, and byte counts for each file: 
+                            wc
+Extract an ISO file: 
+                        7z x filename.iso
+Report faked system time to programs: 
+                    faketime
+
+Format USB stick as VFAT: 
+                sudo mkfs.vfat -I /dev/sdx -n NAME && sync
+Restore disk from image: 
+                sudo dd bs=1M if=im.iso of=/dev/sdx && sync
+Report disk space usage: 
+                df -H, du -hs folder.
+Compare files line by line: 
+                diff
+
+┌─┐┌─┐┌┬┐┌─┐┌─┐┌─┐
+├┤ ├┤ │││├─┘├┤ │ ┬
+└  └  ┴ ┴┴  └─┘└─┘  Lastai kada audio video codec jasto
+
+
+Convert image to 5 sec. video: 
+                    ffmpeg -loop 1 -i 01.png -t 5 out.mp4
+15 images to 30 Hz 5 sec. video: 
+                    ffmpeg -r 3 -i %03d.png -r 30 out.mp4
+Resize video to 720p: 
+                    ffmpeg -i input.webm -s 1280x720 output.webm
+Fade in the first 25 frames and fade out the last 25 frames of a 1000-frame video:
+                 ffmpeg -i in.mp4 -vf 'fade=in:0:25, fade=out:975:25' out.mp4
+Concatenate videos: 
+                ffmpeg -f concat -i mylist.txt -c copy out.mp4
+                
+                
+                
+                
+                
+############################
+
+                                    PDF ko kam haru
+                                    
+Join all PDF files into a new PDF file: 
+                pdftk *.pdf cat output out.pdf
+Join 3 PDF files: 
+            pdftk in1.pdf in2.pdf in3.pdf cat output out.pdf
+Extract pages from a PDF: 
+            pdftk in.pdf cat 1 25-35 end output out.pdf
+
+
+
+
+██╗      █████╗ ███████╗████████╗ █████╗ ██╗    ██╗  ██╗ █████╗ ██████╗  █████╗ 
+██║     ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║    ██║ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+██║     ███████║███████╗   ██║   ███████║██║    █████╔╝ ███████║██║  ██║███████║
+██║     ██╔══██║╚════██║   ██║   ██╔══██║██║    ██╔═██╗ ██╔══██║██║  ██║██╔══██║
+███████╗██║  ██║███████║   ██║   ██║  ██║██║    ██║  ██╗██║  ██║██████╔╝██║  ██║
+╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝
+
+
+
+
+
+
+
+
+
