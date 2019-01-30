@@ -1,0 +1,35 @@
+#######################################################
+
+sudo pacman-db-upgrade && sudo pacman-optimize && sync
+
+If you get the “lock database” or “failed to synchronize” error use the command
+
+sudo rm /var/lib/pacman/db.lck
+
+
+uname -r  :: for checking kernel version
+screenfetch
+neofetch
+
+############################  ADD AUR in pacman ################
+/etc/pacman.conf
+
+[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+
+
+sudo pacman Sy
+
+########################
+sudo pacman -S exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins flashplugin libdvdcss libdvdread libdvdnav gecko-mediaplayer dvd+rw-tools dvdauthor dvgrab
+
+sudo pacman -S file-roller seahorse-nautilus nautilus-share zlib p7zip unzip zip zziplib tar unrar rsync
+
+gsettings set org.gnome.settings-daemon.peripherals.keyboard numlock-state on
+
+sudo pacman -S zim 
+      also there is zim-clip extension for firefox
+
+sudo pacman -S git zsh vim binutils make curl gcc fakeroot — noconfirm — needed
+
