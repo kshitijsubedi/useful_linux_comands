@@ -1,33 +1,36 @@
 # After Installing Arch Distros 
 # My TO-DOs
 
+> These are some of my todo after i install any new distros
 
-ILoveCandy
+
+sudo nano /etc/pacman.conf
+  
+  ILoveCandy
 
 sudo pacman -Sy
 
 
-yay
+ * yay
 
-pamac
+ * pamac
 
-pacui
+ * pacui
 
-plasma-midna-theme
+ * plasma-midna-theme
 
-Anaconda Instalation
+# Anaconda Instalation
 
 
   /usr/local/anaconda/
   
-  /etc/profile
+ > sudo nano /etc/profile
   
-  # added by Anaconda3 installer
   export PATH="/usr/local/anaconda/bin:$PATH"
   
-Vivaldi
+* Vivaldi
 
-Vscode
+* Vscode
 
 
 
